@@ -8,6 +8,7 @@ script:
   - npm test
   - npm run build
 after_script:
+- ls
 - cp ./build/index.html ./build/200.html
 deploy:
   provider: surge
