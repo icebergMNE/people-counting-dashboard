@@ -12,5 +12,6 @@
 - Installation link https://nodejs.org/en/download/
 
 ## Deployment
-- App is deployed on github pages when you push on master branch if tests pass
+- App is deployed on surge.sh when you push on master branch if all tests pass
+- App url https://people-counting-dashboard.surge.sh
 

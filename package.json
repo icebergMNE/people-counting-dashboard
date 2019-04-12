@@ -1,14 +1,13 @@
 {
-  "name": "black-dashboard-react",
+  "name": "people-counting-dashboard",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://people-counting-dashboard.surge.sh/",
+  "homepage": "https://people-counting-dashboard.surge.sh/",
   "dependencies": {
     "@types/react": "16.4.16",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.2",
     "classnames": "2.2.6",
-    "gh-pages": "^2.0.1",
     "history": "4.7.2",
     "node-sass": "4.9.3",
     "perfect-scrollbar": "1.4.0",
