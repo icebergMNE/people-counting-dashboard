@@ -2,7 +2,7 @@
   "name": "black-dashboard-react",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://icebergMNE.github.io/people-counting-dashboard/",
+  "homepage": "http://people-counting-dashboard.surge.sh/",
   "dependencies": {
     "@types/react": "16.4.16",
     "bootstrap": "^4.3.1",
@@ -23,8 +23,6 @@
     "reactstrap": "8.0.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

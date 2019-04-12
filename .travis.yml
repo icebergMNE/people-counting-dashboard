@@ -3,16 +3,16 @@ node_js:
   - "stable"
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
   - npm test
   - npm run build
-notifications:
-  slack: agilegroupc:6RZ3tB4QlAGkEqcc5GzceTT4
+after_script:
+- cp ./build/index.html ./build/200.html
 deploy:
-  provider: pages
+  provider: surge
   skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: master
+  domain: people-counting-dashboard.surge.sh
+  project: ./build/
+on:
+  branch: master
