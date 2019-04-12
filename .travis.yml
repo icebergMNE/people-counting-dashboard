@@ -7,7 +7,8 @@ cache:
 script:
   - npm test
   - npm run build
-
+notifications:
+  slack: agilegroupc:6RZ3tB4QlAGkEqcc5GzceTT4
 deploy:
   provider: pages
   skip_cleanup: true
