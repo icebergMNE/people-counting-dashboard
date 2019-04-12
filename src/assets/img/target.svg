@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="309.24" height="309.24" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+      }
+
+      .cls-1 {
+        stroke-width: 50px;
+      }
+
+      .cls-2 {
+        stroke-width: 30px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="199.5" cy="200.5" r="178.5"/>
+  <circle id="Ellipse_1_copy" data-name="Ellipse 1 copy" class="cls-2" cx="199.5" cy="200.5" r="100.5"/>
+  <circle id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" cx="199.5" cy="200.5" r="35.5"/>
+</svg>
