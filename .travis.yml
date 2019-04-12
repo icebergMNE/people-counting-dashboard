@@ -9,7 +9,9 @@ script:
   - npm run build
 after_script:
 - ls
-- cp ./build/index.html ./build/200.html
+- cp ~/home/travis/build/index.html ~/home/travis/build/200.html
+- cp build/index.html build/200.html
+- cd build && ls
 deploy:
   provider: surge
   skip_cleanup: true
