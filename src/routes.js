@@ -50,7 +50,7 @@ var routes = [
     path: "/imagemarking",
     name: "Image Marker",
     rtlName: "طباعة",
-    icon: "tim-icons icon-align-center",
+    icon: "tim-icons icon-atom",
     component: ImageMarker,
     layout: "/admin"
   }

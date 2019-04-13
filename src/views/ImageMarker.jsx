@@ -1,9 +1,11 @@
 import React from "react";
 
 // reactstrap components
-import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 // import target from '../assets/img/untitled.svg';
 import Target from '../components/Target';
+import TargetList from '../components/TargetList';
+
 class ImageMarker extends React.Component {
   state = {
     image:{
@@ -13,7 +15,13 @@ class ImageMarker extends React.Component {
     },
     marks:[
       {
-        left:50, top:30
+        left:50, top:30, name:'Stefan', createdAt:Date.now(), color:'red'
+      },
+      {
+        left:50, top:30, name:'Stefan', createdAt:Date.now(), color:'red'
+      },
+      {
+        left:50, top:30, name:'Milo', createdAt:Date.now(), color:'blue'
       }
     ]
   }
@@ -22,7 +30,10 @@ class ImageMarker extends React.Component {
     this.setState((state,props)=>{
       const newMark = {
         left:offsetX,
-        top:offsetY
+        top:offsetY,
+        name:'Stefan',
+        color:'red',
+        createdAt:Date.now()
       }
       return{
         marks:[...state.marks, newMark]
@@ -53,15 +64,14 @@ class ImageMarker extends React.Component {
                 {image && (
                   <img src={image.url} alt='main' style={imageStyle}
                   onClick={(e)=>this.addMarkHandler(e)}
-                  onLoad={()=>console.log('image loaded')}
-/>
+                  onLoad={()=>console.log('image loaded')}/>
                 )}
                 </div>
                 
                 </div>
             </Col>
             <Col md="3">
-                <Target position={marks[0]}/>
+                <TargetList targets={marks}/>
             </Col>
           </Row>
         </div>
