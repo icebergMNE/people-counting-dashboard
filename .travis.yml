@@ -13,6 +13,8 @@ script:
 # - cp ~/home/travis/build/index.html ~/home/travis/build/200.html
 # - cp build/index.html build/200.html
 # - cd build && ls
+notifications:
+  slack: agilegroupc:6RZ3tB4QlAGkEqcc5GzceTT4
 deploy:
   provider: surge
   skip_cleanup: true
