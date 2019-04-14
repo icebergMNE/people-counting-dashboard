@@ -32,7 +32,6 @@ class Register extends React.Component {
   };
 
   render() {
-    console.log(backImage);
     const { redirectToLogin } = this.state;
     return (
       <Container fluid>

@@ -1,9 +1,8 @@
 import Dashboard from "views/Dashboard.jsx";
-import Icons from "views/Icons.jsx";
-import Notifications from "views/Notifications.jsx";
 import TableList from "views/TableList.jsx";
 import ImageMarker from "views/ImageMarker.jsx";
 import UserProfile from "views/UserProfile.jsx";
+import NewProject from "./views/NewProject";
 
 var routes = [
   {
@@ -12,6 +11,14 @@ var routes = [
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
+    layout: "/admin"
+  },
+  {
+    path: "/newproject",
+    name: "New Project",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-cloud-upload-94",
+    component: NewProject,
     layout: "/admin"
   },
   // {

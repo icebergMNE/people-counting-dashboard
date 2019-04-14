@@ -18,10 +18,10 @@ class ImageMarker extends React.Component {
         left:50, top:30, name:'Stefan', createdAt:Date.now(), color:'red'
       },
       {
-        left:50, top:30, name:'Stefan', createdAt:Date.now(), color:'red'
+        left:150, top:130, name:'Stefan', createdAt:Date.now(), color:'red'
       },
       {
-        left:50, top:30, name:'Milo', createdAt:Date.now(), color:'blue'
+        left:200, top:230, name:'Milo', createdAt:Date.now(), color:'blue'
       }
     ]
   }
@@ -58,7 +58,7 @@ class ImageMarker extends React.Component {
                 <div style={{position: 'relative'}}>
                   {marks &&(
                   marks.map((mark,index)=>(
-                    <Target position={mark} key={index}/>
+                    <Target position={mark}  key={index}/>
                   )
                 ))}
                 {image && (
