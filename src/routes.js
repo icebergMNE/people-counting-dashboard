@@ -7,7 +7,7 @@ import NewProject from "./views/NewProject";
 var routes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
+    name: "Projects",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
@@ -45,14 +45,14 @@ var routes = [
     component: UserProfile,
     layout: "/admin"
   },
-  {
-    path: "/tables",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "tim-icons icon-puzzle-10",
-    component: TableList,
-    layout: "/admin"
-  },
+  // {
+  //   path: "/tables",
+  //   name: "Table List",
+  //   rtlName: "قائمة الجدول",
+  //   icon: "tim-icons icon-puzzle-10",
+  //   component: TableList,
+  //   layout: "/admin"
+  // },
   {
     path: "/imagemarking",
     name: "Image Marker",
