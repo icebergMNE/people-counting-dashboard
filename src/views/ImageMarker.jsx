@@ -5,9 +5,10 @@ import { Row, Col } from "reactstrap";
 // import target from '../assets/img/untitled.svg';
 import Target from '../components/Target';
 import TargetList from '../components/TargetList';
-
+import {Switch, Route} from 'react-router-dom';
 class ImageMarker extends React.Component {
   state = {
+    user:null,
     image:{
       url:'https://kay.tmit.bme.hu/~kovacsg/peoplecounting/DJI_0554_0.png',
       width:'10000',
@@ -31,18 +32,36 @@ class ImageMarker extends React.Component {
       const newMark = {
         left:offsetX,
         top:offsetY,
-        name:'Stefan',
-        color:'red',
+        name:state.user.email,
+        color:state.user.color,
         createdAt:Date.now()
       }
       return{
         marks:[...state.marks, newMark]
       }
     })
+    window.localStorage.setItem('marks', JSON.stringify(this.state.marks));
     console.log('offsetY:', offsetY)
     // console.log(e);
   }
 
+  componentDidMount(){
+    const image = JSON.parse(window.localStorage.getItem('projects'))[0];
+    const localMarks = window.localStorage.getItem('marks');
+    const marks = localMarks? JSON.parse(localMarks): [];
+    const user = JSON.parse(window.localStorage.getItem('user'));
+    this.setState({
+      image:{
+        url:image.imageUrl,
+      createdAt:Date.now(),
+      width:'10000'
+      }
+    })
+    this.setState({
+      marks,
+      user
+    })
+  }
   render() {
     const {image, marks} = this.state;
     const imageStyle = {

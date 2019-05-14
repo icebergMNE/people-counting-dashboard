@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "userId": "3456532",
+      "email": "test@gmail.com",
+      "color": "#333333",
+      "clicks": [
+        {
+          "Top": "34",
+          "Left": "345"
+        },
+        {
+          "Top": "34",
+          "Left": "345"
+        }
+      ]
+    },
+    {
+      "userId": "345645",
+      "email": "test2@gmail.com",
+      "color": "#333333",
+      "clicks": [
+        {
+          "Top": "34",
+          "Left": "345"
+        }
+      ]
+    }
+  ],
+  "data":{
+    "id":"123414",
+    "email":"test@gmail.com",
+	  "password":"123123",
+    "color":"#333333"
+  }
+}

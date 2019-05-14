@@ -17,20 +17,32 @@ import { Redirect } from "react-router-dom";
 
 import backImage from "../assets/img/login.jpg";
 import ColorPicker from "../components/ColorPicker";
+import {register} from '../apiService';
 
 class Register extends React.Component {
   state = {
     redirectToLogin: false,
+    password:'',
+    email:'',
     color: '#4D2A11'
   };
-  handleRegistration(e) {
-    console.log("idemo");
-    this.setState({ redirectToLogin: true });
+  handleRegistration=(e)=> {
+    e.preventDefault();
+
+    const {email, color} = this.state;
+    window.localStorage.setItem('user', JSON.stringify({email, color}));
+    this.setState({redirectToLogin: true});
+    // this.setState({ redirectToLogin: true });
   }
   handleColorChange = (color) => {
     this.setState({ color: color.hex })
   };
-
+  handlePasswordChange=(event) =>{
+    this.setState({password: event.target.value});
+  }
+  handleEmailChange=(event) =>{
+    this.setState({email: event.target.value});
+  }
   render() {
     const { redirectToLogin } = this.state;
     return (
@@ -60,16 +72,16 @@ class Register extends React.Component {
                     </h5>
                   </CardHeader>
                   <CardBody>
-                    <Form>
+                    <Form onSubmit={this.handleRegistration}>
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">
                           Email address
                         </label>
-                        <Input placeholder="mike@email.com" type="email" />
+                        <Input placeholder="mike@email.com" type="email" required value={this.state.email} onChange={this.handleEmailChange}/>
                       </FormGroup>
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">Password</label>
-                        <Input placeholder="password" type="password" />
+                        <Input placeholder="password" type="password" required value={this.state.password} onChange={this.handlePasswordChange}/>
                       </FormGroup>
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">
@@ -77,24 +89,26 @@ class Register extends React.Component {
                         </label>
                         <ColorPicker onChange={this.handleColorChange} color={this.state.color}/>
                       </FormGroup>
-                    </Form>
-                  </CardBody>
-                  <CardFooter>
-                    <Button
-                      className="btn-fill"
-                      color="primary"
-                      type="submit"
-                      onPointerDown={e => this.handleRegistration(e)}
+                      <FormGroup>
+                        <Button
+                          className="btn-fill"
+                          color="primary"
+                          type="submit"
                     >
                       Register
                     </Button>
+                      </FormGroup>
+                    </Form>
+                  </CardBody>
+                  <CardFooter>
+                    
                   </CardFooter>
                 </Card>
               </Col>
             </Row>
           </Col>
         </Row>
-        {redirectToLogin && <Redirect to="/login" />}
+        {redirectToLogin && <Redirect to="/admin" />}
       </Container>
     );
   }
